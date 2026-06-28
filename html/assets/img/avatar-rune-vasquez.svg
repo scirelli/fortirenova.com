@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="bg-rv" cx="50%" cy="40%" r="55%">
+      <stop offset="0%"   stop-color="#1a2340"/>
+      <stop offset="100%" stop-color="#070912"/>
+    </radialGradient>
+    <linearGradient id="skin-rv" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#e0b890"/>
+      <stop offset="100%" stop-color="#c49870"/>
+    </linearGradient>
+    <linearGradient id="hair-rv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="accent-rv" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <clipPath id="circle-rv">
+      <circle cx="100" cy="100" r="100"/>
+    </clipPath>
+    <filter id="glow-rv">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="url(#bg-rv)"/>
+
+  <!-- Grid lines -->
+  <g clip-path="url(#circle-rv)" opacity="0.12">
+    <line x1="0" y1="50"  x2="200" y2="50"  stroke="#a855f7" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="200" y2="100" stroke="#a855f7" stroke-width="0.5"/>
+    <line x1="0" y1="150" x2="200" y2="150" stroke="#a855f7" stroke-width="0.5"/>
+    <line x1="50"  y1="0" x2="50"  y2="200" stroke="#a855f7" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="100" y2="200" stroke="#a855f7" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="200" stroke="#a855f7" stroke-width="0.5"/>
+  </g>
+
+  <!-- Shoulders / jacket -->
+  <ellipse cx="100" cy="185" rx="62" ry="38" fill="#1a2340"/>
+  <!-- Lapels / shirt -->
+  <path d="M78 172 L100 162 L122 172 L128 200 H72 Z" fill="#0d1322"/>
+  <path d="M100 162 L95 180 L100 185 L105 180 Z" fill="#e6ecff" opacity="0.08"/>
+
+  <!-- Neck -->
+  <rect x="90" y="140" width="20" height="26" rx="7" fill="url(#skin-rv)"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="114" rx="36" ry="40" fill="url(#skin-rv)"/>
+
+  <!-- Short hair -->
+  <path d="M65 114 C64 90 74 70 100 67 C126 70 136 90 135 114 C132 95 124 76 100 73 C76 76 68 95 65 114 Z" fill="url(#hair-rv)"/>
+
+  <!-- Light stubble hint -->
+  <ellipse cx="100" cy="135" rx="22" ry="8" fill="#b08060" opacity="0.1"/>
+
+  <!-- Glasses frames -->
+  <rect x="76" y="110" width="20" height="13" rx="4" stroke="#334466" stroke-width="1.5" fill="rgb(0 229 255 / 0.04)"/>
+  <rect x="104" y="110" width="20" height="13" rx="4" stroke="#334466" stroke-width="1.5" fill="rgb(0 229 255 / 0.04)"/>
+  <line x1="96" y1="116" x2="104" y2="116" stroke="#334466" stroke-width="1.5"/>
+  <line x1="66" y1="116" x2="76"  y2="116" stroke="#334466" stroke-width="1.5"/>
+  <line x1="124" y1="116" x2="136" y2="116" stroke="#334466" stroke-width="1.5"/>
+
+  <!-- Eyes behind glasses -->
+  <ellipse cx="86"  cy="116" rx="4.5" ry="3.5" fill="#2a2010"/>
+  <ellipse cx="114" cy="116" rx="4.5" ry="3.5" fill="#2a2010"/>
+  <circle cx="87.5" cy="114.5" r="1.5" fill="white" opacity="0.85"/>
+  <circle cx="115.5" cy="114.5" r="1.5" fill="white" opacity="0.85"/>
+
+  <!-- Eyebrows -->
+  <path d="M80 107 Q86 104 92 106" stroke="#2a2010" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M108 106 Q114 104 120 107" stroke="#2a2010" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M100 120 Q97 126 94 128 Q97 130 100 129 Q103 130 106 128 Q103 126 100 120Z" fill="#c08060" opacity="0.55"/>
+
+  <!-- Mouth — focused expression -->
+  <path d="M93 137 Q100 139 107 137" stroke="#a07050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Circuit accent on right side -->
+  <g filter="url(#glow-rv)" opacity="0.85">
+    <circle cx="139" cy="106" r="2.5" fill="#a855f7"/>
+    <line x1="139" y1="106" x2="145" y2="102" stroke="#a855f7" stroke-width="1"/>
+    <circle cx="145" cy="102" r="1.5" fill="#00e5ff"/>
+    <line x1="145" y1="102" x2="150" y2="107" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="150" cy="107" r="1.5" fill="#a855f7"/>
+    <line x1="150" y1="107" x2="154" y2="103" stroke="#a855f7" stroke-width="1"/>
+    <circle cx="154" cy="103" r="1"   fill="#00e5ff"/>
+  </g>
+
+  <!-- Violet rim -->
+  <circle cx="100" cy="100" r="98" stroke="url(#accent-rv)" stroke-width="1.5" opacity="0.45"/>
+</svg>

@@ -1,0 +1,245 @@
+/* ── Container ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+@media (min-width: 640px)  { .container { padding-inline: var(--space-8); } }
+@media (min-width: 960px)  { .container { padding-inline: var(--space-12); } }
+
+/* ── Site header / nav ─────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgb(7 9 18 / 0.82);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo-mark { width: 36px; height: 36px; }
+
+.nav-logo-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--fg-0);
+  white-space: nowrap;
+}
+.nav-logo-name span { color: var(--accent-cyan); }
+
+/* desktop links */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+  position: relative;
+  padding-block: var(--space-1);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  border-radius: var(--radius-full);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--fg-0); }
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after { width: 100%; }
+
+/* hamburger */
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--fg-0);
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-base) var(--ease-out),
+              opacity var(--duration-fast) var(--ease-out);
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (min-width: 640px) { .nav-hamburger { display: none; } }
+
+/* mobile menu */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--border);
+  background: rgb(7 9 18 / 0.95);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--fg-1);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.nav-mobile a:hover,
+.nav-mobile a[aria-current="page"] { color: var(--accent-cyan); }
+
+/* ── Footer ────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-12) var(--space-8);
+  margin-top: var(--space-24);
+}
+
+.footer-inner {
+  display: grid;
+  gap: var(--space-10);
+}
+
+@media (min-width: 640px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.footer-brand p {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  max-width: 36ch;
+}
+
+.footer-col h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-2);
+  margin-bottom: var(--space-4);
+}
+
+.footer-col ul { display: flex; flex-direction: column; gap: var(--space-2); }
+.footer-col a {
+  font-size: var(--text-sm);
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.footer-col a:hover { color: var(--accent-cyan); }
+
+.footer-bottom {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  font-size: var(--text-xs);
+  color: var(--fg-2);
+  max-width: none;
+}
+
+/* ── Section anatomy ───────────────────────────────────── */
+.section { padding-block: var(--space-20); }
+.section + .section { padding-top: 0; }
+
+.section-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.section-title { margin-bottom: var(--space-4); }
+.section-sub {
+  font-size: var(--text-lg);
+  color: var(--fg-1);
+  margin-bottom: var(--space-12);
+  max-width: 60ch;
+}
+
+/* ── Card / glass panel ────────────────────────────────── */
+.card-panel {
+  background: rgb(255 255 255 / 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow   var(--duration-base) var(--ease-out);
+}
+.card-panel:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 32px var(--accent-glow);
+}
+
+/* ── Auto-fill grid helpers ────────────────────────────── */
+.grid-auto-sm { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.grid-auto-md { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }

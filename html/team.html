@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Fortirenova team — the people building autonomous AI systems and custom software that move the needle.">
+  <title>Team — Fortirenova</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────── -->
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Fortirenova home">
+      <img src="assets/img/logo.svg" alt="" class="nav-logo-mark" width="36" height="36">
+      <span class="nav-logo-name">FORTI<span>RENOVA</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="team.html" aria-current="page">Team</a>
+      <a href="mailto:hello@fortirenova.com">Contact Us</a>
+    </nav>
+    <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html" aria-current="page">Team</a>
+    <a href="mailto:hello@fortirenova.com">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+<!-- ── Team hero ────────────────────────────────────────── -->
+<section class="team-hero container">
+  <span class="section-label">The People</span>
+  <h1>Built by practitioners,<br>not theorists.</h1>
+  <p style="font-size:var(--text-xl);color:var(--fg-1);max-width:62ch;margin-top:var(--space-4);">
+    Every member of the Fortirenova team has shipped systems under real production pressure.
+    We obsess over the hard parts — latency, reliability, agent safety, and feedback loops that
+    make systems improve rather than drift. Click any portrait to learn more.
+  </p>
+</section>
+
+<!-- ── Employee grid ────────────────────────────────────── -->
+<section class="section container">
+  <div class="team-grid" id="team-grid">
+
+    <!--
+      ════════════════════════════════════════════════════════════
+      SLOT-AUTHORED EMPLOYEE — Ada Marcellus, CEO
+      Drop any <employee-info> tag here to add team members.
+      Required slots: portrait, first-name, last-name, title
+      Optional slots: bio, experience, education, skills, links, quote
+      ════════════════════════════════════════════════════════════
+    -->
+    <employee-info>
+      <img slot="portrait" src="assets/img/avatar-ada-marcellus.svg" alt="Ada Marcellus">
+
+      <span slot="first-name">Ada</span>
+      <span slot="last-name">Marcellus</span>
+      <span slot="title">Chief Executive Officer</span>
+
+      <p slot="bio">
+        Ada Marcellus founded Fortirenova after a decade at the frontier of autonomous systems —
+        first as a research scientist at DeepMind's multi-agent coordination team, then as Principal
+        AI Architect at Palantir where she led the Foundry Intelligence layer deployed across three
+        defense agencies. She left to answer a question she kept encountering: why are enterprises
+        still treating AI as a feature when it could be the operating system? Fortirenova is her answer.
+        Ada believes the most important property of an intelligent system is not raw capability but
+        <strong>deployability</strong> — the ability to operate reliably at scale under constraints
+        that weren't anticipated during design.
+      </p>
+
+      <ul slot="experience">
+        <li>Fortirenova — Founder &amp; CEO (2023–present): Building the company from the ground up; leading client strategy, technical vision, and team growth.</li>
+        <li>Palantir Technologies — Principal AI Architect (2019–2023): Designed and deployed the Foundry Intelligence layer. Led a distributed team of 22 engineers across 3 time zones.</li>
+        <li>DeepMind — Research Scientist, Multi-Agent Systems (2015–2019): Published 8 peer-reviewed papers on cooperative agent behavior and emergent communication. Co-invented the Adaptive Policy Gradient framework (patent pending).</li>
+        <li>MIT CSAIL — Research Assistant, Robotics &amp; AI (2013–2015): Contributed to planning algorithms for autonomous logistics systems under Prof. Leslie Kaelbling.</li>
+      </ul>
+
+      <ul slot="education">
+        <li>M.S. Computer Science — MIT (2015), concentration: Artificial Intelligence &amp; Robotics</li>
+        <li>B.S. Mathematics &amp; Computer Science — University of Michigan (2013), summa cum laude</li>
+      </ul>
+
+      <ul slot="skills">
+        <li>Reinforcement Learning</li>
+        <li>Multi-Agent Systems</li>
+        <li>Large Language Models</li>
+        <li>Distributed Architecture</li>
+        <li>Python / JAX / PyTorch</li>
+        <li>Technical Leadership</li>
+        <li>Enterprise Strategy</li>
+        <li>Evaluation Frameworks</li>
+      </ul>
+
+      <ul slot="links">
+        <li><a href="mailto:ada@fortirenova.com">ada@fortirenova.com</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Google Scholar</a></li>
+      </ul>
+
+      <p slot="quote">
+        The difference between a demo and a deployed agent is everything.
+        Anyone can make something impressive; the hard part is making it
+        reliable enough that you can trust it when you're not looking.
+      </p>
+    </employee-info>
+
+    <!--
+      ════════════════════════════════════════════════════════════
+      JSON-AUTHORED EMPLOYEE — Rune Vasquez, CTO
+      Uses a <script slot="data"> payload instead of named slots.
+      Named slots take precedence if both are present.
+      ════════════════════════════════════════════════════════════
+    -->
+    <employee-info>
+      <script slot="data" type="application/json">
+        {
+          "firstName": "Rune",
+          "lastName": "Vasquez",
+          "title": "Chief Technology Officer",
+          "portrait": "assets/img/avatar-rune-vasquez.svg",
+          "bio": "Rune Vasquez has spent fifteen years building the plumbing that makes ambitious systems actually work. He joined Fortirenova as founding CTO after six years at Stripe, where he led the infrastructure team responsible for payments processing across 135 countries — a system that handles billions of transactions per year with five-nines availability. Before Stripe he was a distributed-systems engineer at Cloudflare and an early infrastructure hire at a Series B logistics startup that was eventually acquired. Rune is obsessive about the 'boring' parts of AI: latency, observability, determinism, cost, and the feedback loops that prevent agents from degrading silently in production. He holds six patents in distributed transaction processing.",
+          "experience": [
+            "Fortirenova — Co-Founder & CTO (2023–present): Architecting the agent infrastructure platform. Responsible for all engineering hiring and technical standards.",
+            "Stripe — Staff Infrastructure Engineer (2017–2023): Led the core payments infrastructure team (34 engineers). Delivered the Stripe Connect v2 architecture, reducing p99 latency by 68% and infrastructure cost by 41%.",
+            "Cloudflare — Senior Systems Engineer (2014–2017): Built the request routing and load-shedding system now handling 25M+ requests per second globally.",
+            "FreightOS (acq. 2014) — Infrastructure Engineer #3 (2012–2014): Scaled the core booking platform from prototype to Series B. Survived three 10× traffic spikes without downtime."
+          ],
+          "education": [
+            "M.Eng. Electrical Engineering & Computer Science — MIT (2012), thesis: Consensus Protocols for Geographically-Distributed Datastores",
+            "B.S. Computer Engineering — Carnegie Mellon University (2011), with honors"
+          ],
+          "skills": [
+            "Distributed Systems",
+            "Go / Rust / C++",
+            "Kubernetes & eBPF",
+            "Agent Observability",
+            "PostgreSQL / FoundationDB",
+            "SRE & Reliability Eng.",
+            "Consensus Protocols",
+            "Technical Recruiting"
+          ],
+          "links": [
+            { "label": "rune@fortirenova.com", "href": "mailto:rune@fortirenova.com" },
+            { "label": "LinkedIn",             "href": "#" },
+            { "label": "GitHub",               "href": "#" }
+          ],
+          "quote": "Latency is respect. When you make someone wait, you're making a claim that your computation is worth their time. Engineer accordingly."
+        }
+      </script>
+    </employee-info>
+
+    <!--
+      ════════════════════════════════════════════════════════════
+      ADD MORE EMPLOYEES HERE
+      Paste a new <employee-info> block using either authoring mode.
+      ════════════════════════════════════════════════════════════
+    -->
+
+  </div>
+</section>
+
+<!-- ── CTA ──────────────────────────────────────────────── -->
+<section class="section container">
+  <div class="cta-banner">
+    <span class="section-label" style="display:block;margin-bottom:var(--space-4);">Join the Team</span>
+    <h2>We're hiring people who<br>find hard problems exciting.</h2>
+    <p>
+      No cargo-culting, no JIRA theater. Bring your best thinking and a tolerance
+      for ambiguity — we'll handle the rest.
+    </p>
+    <a href="mailto:careers@fortirenova.com" class="btn btn-primary">careers@fortirenova.com</a>
+  </div>
+</section>
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="Fortirenova home">
+          <img src="assets/img/logo.svg" alt="" width="32" height="32">
+          <span class="nav-logo-name" style="font-size:1rem;">FORTI<span>RENOVA</span></span>
+        </a>
+        <p>Engineering autonomous intelligence for the enterprise. Strong foundations. Novel futures.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#agents">Agentic Engagements</a></li>
+          <li><a href="services.html#software">Software Squads</a></li>
+          <li><a href="services.html#advisory">Advisory &amp; Audits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@fortirenova.com">hello@fortirenova.com</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="#" aria-label="GitHub">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fortirenova LLC. All rights reserved.</p>
+      <p class="mono" style="font-size:0.7rem;color:var(--fg-2);">// fortis + renova — strong &amp; renewed</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/employee-info.js"></script>
+<script>
+  // Collapse any open card when another opens (one-expanded-at-a-time behavior)
+  document.getElementById('team-grid').addEventListener('employee-toggle', (e) => {
+    if (!e.detail.open) return;
+    const grid = e.currentTarget;
+    grid.querySelectorAll('employee-info[open]').forEach((card) => {
+      if (card !== e.target) card.removeAttribute('open');
+    });
+  });
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-0);
+  color: var(--fg-0);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Animated background ───────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 60% 55% at 15% 20%, rgb(0 229 255 / 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 75%, rgb(168 85 247 / 0.07) 0%, transparent 60%);
+  animation: blob-drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+@keyframes blob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(40px, -30px) scale(1.05); }
+  66%  { transform: translate(-20px, 50px) scale(0.97); }
+  100% { transform: translate(60px, 20px) scale(1.03); }
+}
+
+/* ── Typography base ───────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--fg-0);
+}
+
+h1 { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); }
+h2 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(var(--text-xl),  3vw, var(--text-3xl)); }
+h4 { font-size: var(--text-xl); }
+
+p { color: var(--fg-1); max-width: 68ch; }
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out),
+              opacity var(--duration-fast) var(--ease-out);
+}
+a:hover { color: #fff; }
+a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+ul, ol { list-style: none; }
+
+img, svg { display: block; max-width: 100%; }
+
+strong { color: var(--fg-0); font-weight: 600; }
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--accent-cyan);
+}
+
+/* ── Utility classes ───────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.accent-cyan   { color: var(--accent-cyan); }
+.accent-violet { color: var(--accent-violet); }
+.accent-green  { color: var(--accent-green); }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent-cyan);
+  background: rgb(0 229 255 / 0.08);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    box-shadow  var(--duration-base) var(--ease-out),
+    transform   var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+  padding: 0.65rem 1.6rem;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+  color: #070912;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 56px var(--accent-glow);
+  color: #070912;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-0);
+  border: 1px solid var(--border-accent);
+}
+.btn-ghost:hover {
+  background: rgb(0 229 255 / 0.06);
+  border-color: var(--accent-cyan);
+  color: var(--fg-0);
+}
